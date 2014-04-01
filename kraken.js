@@ -140,13 +140,7 @@ function KrakenClient(key, secret, otp) {
 				catch(e) {
 					throw new Error('Could not understand response from server: ' + body);
 				}
-
-				if(data.error && data.error.length) {
-					callback.call(self, data.error, null);
-				}
-				else {
-					callback.call(self, null, data);
-				}
+        callback.call(self, null, data);
 			}
 		});
 
